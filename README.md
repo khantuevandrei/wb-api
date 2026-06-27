@@ -4,6 +4,7 @@
 
 ## Доступ к БД
 
+- url: http://www.phpmyadmin.co/
 - Host: sql7.freesqldatabase.com
 - Port: 3306
 - Database: sql7831696
