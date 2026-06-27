@@ -19,7 +19,24 @@
 
 ## Запуск
 
-php artisan wb:fetch {dateFrom} {dateTo}
+php artisan wb:fetch {type} {dateFrom} {dateTo}
 
 Пример:
-php artisan wb:fetch 2026-01-01 2026-06-27
+php artisan wb:fetch sales 2026-06-26
+php artisan wb:fetch orders 2026-06-26
+php artisan wb:fetch stocks 2026-06-27
+php artisan wb:fetch incomes 2026-03-20
+
+## Почему не все таблицы за одну дату
+
+- **stocks** — API отдаёт данные только за текущий день
+- **incomes** — данные доступны не за все даты (последние найденные — 20 марта 2026)
+- **sales и orders** — содержат данные за 26 июня 2026
+
+Поэтому загрузка выполнена раздельно:
+
+- sales, orders — 26 июня 2026
+- stocks — 27 июня 2026
+- incomes — 20 марта 2026
+
+Каждая таблица содержит по 100 записей (для соблюдения лимитов бесплатного хостинга).
