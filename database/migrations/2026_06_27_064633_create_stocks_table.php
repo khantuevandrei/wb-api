@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('tech_size')->nullable();
             $table->bigInteger('barcode')->nullable();
             $table->integer('quantity')->nullable();
-            $table->boolean('is_supply')->default(false);
-            $table->boolean('is_realization')->default(false);
+            $table->boolean('is_supply')->nullable();
+            $table->boolean('is_realization')->nullable();
             $table->integer('quantity_full')->nullable();
             $table->string('warehouse_name')->nullable();
             $table->integer('in_way_to_client')->nullable();

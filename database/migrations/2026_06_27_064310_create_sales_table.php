@@ -18,8 +18,8 @@ return new class extends Migration
             $table->bigInteger('barcode')->nullable();
             $table->decimal('total_price', 10, 2)->nullable();
             $table->integer('discount_percent')->nullable();
-            $table->boolean('is_supply')->default(false);
-            $table->boolean('is_realization')->default(false);
+            $table->boolean('is_supply')->nullable();
+            $table->boolean('is_realization')->nullable();
             $table->decimal('promo_code_discount', 10, 2)->nullable();
             $table->string('warehouse_name')->nullable();
             $table->string('country_name')->nullable();

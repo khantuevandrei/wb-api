@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('subject')->nullable();
             $table->string('category')->nullable();
             $table->string('brand')->nullable();
-            $table->boolean('is_cancel')->default(false);
+            $table->boolean('is_cancel')->nullable();
             $table->dateTime('cancel_dt')->nullable();
             $table->timestamps();
         });
