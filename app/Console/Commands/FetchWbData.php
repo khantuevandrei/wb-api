@@ -19,7 +19,7 @@ class FetchWbData extends Command
         $this->api = $api;
     }
 
-    private function fetchAndSave(string $table, callable $fetcher): void
+    private function fetchAndSave(string $table, callable $fetcher, int $max = 100): void
     {
         $page = 1;
         $total = 0;
@@ -32,6 +32,8 @@ class FetchWbData extends Command
             foreach ($data as $row) {
                 DB::table($table)->insert($row);
                 $total++;
+
+                if ($total >= $max) break 2;
             }
 
             $this->info("{$table}: page {$page} — {$total} records");

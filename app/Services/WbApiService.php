@@ -22,7 +22,7 @@ class WbApiService
         return $response->json('data') ?? [];
     }
 
-    public function fetchSales(string $dateFrom, string $dateTo, int $page = 1, int $limit = 500): array
+    public function fetchSales(string $dateFrom, string $dateTo, int $page = 1, int $limit = 100): array
     {
         return $this->fetch(
             '/api/sales',
@@ -35,7 +35,7 @@ class WbApiService
         );
     }
 
-    public function fetchOrders(string $dateFrom, string $dateTo, int $page = 1, int $limit = 500): array
+    public function fetchOrders(string $dateFrom, string $dateTo, int $page = 1, int $limit = 100): array
     {
         return $this->fetch(
             '/api/orders',
@@ -48,7 +48,7 @@ class WbApiService
         );
     }
 
-    public function fetchStocks(string $dateFrom, int $page = 1, int $limit = 500): array
+    public function fetchStocks(string $dateFrom, int $page = 1, int $limit = 100): array
     {
         return $this->fetch(
             '/api/stocks',
@@ -60,7 +60,7 @@ class WbApiService
         );
     }
 
-    public function fetchIncomes(string $dateFrom, string $dateTo, int $page = 1, int $limit = 500): array
+    public function fetchIncomes(string $dateFrom, string $dateTo, int $page = 1, int $limit = 100): array
     {
         return $this->fetch(
             '/api/incomes',
